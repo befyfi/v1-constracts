@@ -45,6 +45,10 @@ const config: HardhatUserConfig = {
             url: `https://ethereum-goerli.publicnode.com`,
             accounts: [`${process.env.PRIVATE_KEY}`],
         },
+        main: {
+            url: `https://ethereum.publicnode.com`,
+            accounts: [`${process.env.PRIVATE_KEY}`],
+        },
          
        
     },
@@ -54,7 +58,9 @@ const config: HardhatUserConfig = {
             scroll_sepolia: `${process.env.API_KEY_SCROLL_ONLINE}`,
             arbitrumOne: `${process.env.API_KEY_ARB_ONLINE}`,
             arbitrumGoerli: `${process.env.API_KEY_ARB_GOERLI}`,
-            goerli: `${process.env.API_KEY_ETH_GOERLI}`
+            goerli: `${process.env.API_KEY_ETH_GOERLI}`,
+            main: `${process.env.API_KEY_ETH_GOERLI}`
+
              },
         customChains: [
        
@@ -96,6 +102,14 @@ const config: HardhatUserConfig = {
                 urls: {
                     apiURL: "https://api-goerli.etherscan.io/api",
                     browserURL: "https://goerli.etherscan.io/",
+                },
+            },
+            {
+                network: "main",
+                chainId: 1,
+                urls: {
+                    apiURL: "https://api.etherscan.io/api",
+                    browserURL: "https://etherscan.io/",
                 },
             },
             
